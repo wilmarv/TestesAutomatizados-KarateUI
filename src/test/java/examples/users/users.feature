@@ -1,46 +1,28 @@
-Feature: sample karate test script
-  for help, see: https://github.com/intuit/karate/wiki/IDE-Support
+Feature: Testando API Usuarios.
 
-  Background:
-    * url 'https://jsonplaceholder.typicode.com'
-
-  Scenario: get all users and then get the first user by id
-    Given path 'users'
+Background: Executa antes de cada teste
+    * def url_base = "http://localhost:3000"
+    
+    
+Scenario: Listando Usuarios ja cadastrados
+    Given url url_base 
+    And path "/usuarios"
     When method get
     Then status 200
+    And print response
 
-    * def first = response[0]
-
-    Given path 'users', first.id
+Scenario: Procurando pelo usuario Lucas retorando o Usuario Lucas
+    Given url url_base 
+    And path "/usuarios?nome=Lucas%20Guitton"
     When method get
     Then status 200
+    And match response[0].nome == "Lucas Guitton"
 
-  Scenario: create a user and then get it by id
-    * def user =
-      """
-      {
-        "name": "Test User",
-        "username": "testuser",
-        "email": "test@user.com",
-        "address": {
-          "street": "Has No Name",
-          "suite": "Apt. 123",
-          "city": "Electri",
-          "zipcode": "54321-6789"
-        }
-      }
-      """
-
-    Given url 'https://jsonplaceholder.typicode.com/users'
-    And request user
+Scenario: Cadastrando Usuario novo
+    Given url url_base 
+    And path "/usuarios"
+    And form field id = 5
+    And form field nome = "Arthur"
+    And form field email = "Arthur@email.com"
     When method post
     Then status 201
-
-    * def id = response.id
-    * print 'created id is: ', id
-
-    Given path id
-    # When method get
-    # Then status 200
-    # And match response contains user
-  

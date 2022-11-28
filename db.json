@@ -1,0 +1,90 @@
+{
+  "usuarios": [
+    {
+      "id": 0,
+      "nome": "wilmar vitor fonseca",
+      "email": "wilmarfonseca@gec.inatel.br",
+      "endereco": {
+        "endereco": "R rua qualquer",
+        "numero": 234,
+        "cidade": "Santa Rita do Sapucai"
+      }
+    },
+    {
+      "id": 1,
+      "nome": "Lucas Guitton",
+      "email": "LucasGuitton@gea.inatel.br",
+      "endereco": {
+        "endereco": "R rua longe",
+        "numero": 127,
+        "cidade": "Rio de Janeiro"
+      }
+    },
+    {
+      "id": 2,
+      "nome": "Ricardo Villela",
+      "email": "ricadorVillela@email.com",
+      "endereco": {
+        "endereco": "R desconhecido",
+        "numero": 4,
+        "cidade": "Sao Paulo"
+      }
+    },
+    {
+      "id": "5",
+      "nome": "Arthur",
+      "email": "Arthur@email.com"
+    }
+  ],
+  "Produtos": [
+    {
+      "id": 0,
+      "nome": "Camiseta Fullmetal Alchemist",
+      "descricao": "Camiseta de anime Roy Mustang",
+      "preco": 69.99
+    },
+    {
+      "id": 1,
+      "nome": "Caneca nerd",
+      "descricao": "Caneca com estampa personalizada ",
+      "preco": 35.5
+    },
+    {
+      "id": 2,
+      "nome": "Camiseta Fullmetal Alchemist",
+      "descricao": "Camiseta de anime Edward Eric",
+      "preco": 69.99
+    },
+    {
+      "id": 3,
+      "nome": "Camiseta Fullmetal Alchemist",
+      "descricao": "Camiseta de anime Alphonse Eric",
+      "preco": 69.99
+    },
+    {
+      "id": 4,
+      "nome": "chinelo havaianas",
+      "descricao": "Chinelo Havainanas stampa circulo de transmutação",
+      "preco": 25.9
+    }
+  ],
+  "carrinho": {
+    "0": {
+      "compraTotal": 105.49,
+      "listaCompra": [
+        {
+          "id": 0,
+          "nome": "Camiseta Fullmetal Alchemist",
+          "descricao": "Camiseta de anime Roy Mustang",
+          "preco": 69.99
+        },
+        {
+          "id": 1,
+          "nome": "Caneca nerd",
+          "descricao": "Caneca com estampa personalizada ",
+          "preco": 35.5
+        }
+      ]
+    }
+  }
+}
