@@ -1,4 +1,4 @@
-Feature: browser automation 1
+Feature: Scenario de Teste: Comportamento de uma pagina web
 
 Background:
   * configure driver = { type: 'chrome', showDriverLog: true }
@@ -9,11 +9,11 @@ Background:
 # * configure driver = { type: 'safaridriver', showDriverLog: true }
 # * configure driver = { type: 'iedriver', showDriverLog: true, httpConfig: { readTimeout: 120000 } }
 
-Scenario: try to login to github
-and then do a google search
+Scenario: Caso de Teste: Tentativa de logar com usuario não existente e retornar com msg de error
+  * def msgError = "Epic sadface: Username and password do not match any user in this service";
 
   Given driver 'https://www.saucedemo.com/'
   And input('#user-name', 'nickLogin')
   And input('#password', 'senhaSecreta')
   When click("input[name=login-button]")
-  Then match html('.error-message-container') contains 'Epic sadface: Username and password do not match any user in this service'
+  Then match html('.error-message-container') contains msgError

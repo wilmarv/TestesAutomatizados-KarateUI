@@ -1,10 +1,10 @@
-Feature: Testando API Compras.
+Feature: Cenario de Teste:Testando API Compras.
 
 Background: Executa antes de cada teste
     * def url_base = "http://localhost:3000"
     
 
-Scenario: Somatorio do valor dos produtos no carrinho 
+Scenario:   Caso de Teste: Somatorio do valor dos produtos no carrinho 
     Given url url_base 
     And path "/carrinho"
     When method get
